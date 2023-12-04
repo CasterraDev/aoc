@@ -58,8 +58,10 @@ For each game, find the minimum set of cubes that must have been present. What i
 
 When I first saw the problem for part 1 I realized that you don't have to care for the hands or sets of cubes (When the elve grabs a handful of cubes. I'm gonna call them hands).
 This is because if you can only have 14 blue cubes and the elve grabbed 20 then the entire game is impossible. The other colors don't matter since the elve can't have 20 blue cubes.
+
 I also knew that as soon as we get an amount of cubes that isn't possible the rest of the line doesn't matter. Which means I wouldn't have to parse the entire line.
-These two reasons made me go over the games lines word by word instead of spliting the words into hands.
+
+These two reasons made me go over the games lines word by word instead of spliting the words into hands like the problem statement was trying to make you do.
 
 I knew the first number I encounter would be the `ID` and after that all over numbers would be amounts of cubes.
 
@@ -73,6 +75,7 @@ With this I was able to get the answer to part 1.
 
 After reading part 2's problem I misunderstood it. When it said "games" I thought we were still talking about only possible games not all the games.
 This caused some confusion but then I actually read the example input and saw that they were including games that were impossible into their sum.
+
 Which meant that I had to parse every whole line to get the largest amount of each colored cubes. So instead of actually breaking out of the loop with `break`.
 Instead I used a bool variable `cont`. If `cont` is true then the colored cubes wouldn't be adding to part 1's sum. This allowed me to print both part 1 and part 2 answers.
 

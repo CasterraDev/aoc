@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+#include <sstream>
 
 using namespace std;
 
@@ -12,17 +13,39 @@ using namespace std;
 #define PI 3.1415926535897932384626433832795
 #define MOD 1000000007
 
-typedef vector<int> VI;
-typedef vector<string> VS;
 typedef unsigned long long ull;
 typedef long long ll;
+typedef pair<ull,ull> PU;
+typedef pair<ll,ll> PL;
+typedef vector<int> VI;
+typedef vector<ull> VU;
+typedef vector<ll> VL;
+typedef vector<PU> VPU;
+typedef vector<PL> VPL;
+typedef vector<string> VS;
+
+vector<ull> numArray(string s){
+    vector<ull> out;
+    stringstream ss;
+    ss << s;
+    string temp;
+    ull found;
+    while (!ss.eof()){
+        ss >> temp;
+        if (stringstream(temp) >> found){
+            out.push_back(found);
+        }
+        temp = "";
+    }
+    return out;
+}
 
 int main() {
     ull sum = 0;
     ull sum2 = 0;
 
     // Open the file
-    string filename("four.txt");
+    string filename("input.txt");
     VS lines;
     string line;
 
@@ -32,19 +55,9 @@ int main() {
     }
 
     // Loop through the lines of the file. with `line` containing the line
-    // contents. Split by space
+    // contents.
     while (getline(inputFile, line)) {
-        stringstream ss;
-        ss << line;
-        string temp;
-        int found;
-        while (!ss.eof()) {
-            ss >> temp;
-            if (stringstream(temp) >> found) {
 
-            }
-            temp = "";
-        }
     }
 
     cout << "SUM: " << sum << endl;
